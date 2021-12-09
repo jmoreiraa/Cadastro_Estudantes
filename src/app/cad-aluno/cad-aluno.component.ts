@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { AlunoService } from '../aluno.service';
 
 @Component({
   selector: 'app-cad-aluno',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadAlunoComponent implements OnInit {
 
-  constructor() { }
+    form!: FormGroup;
+    submitted = false;
+
+  constructor(private fb: FormBuilder,
+              private service: AlunoService ) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    this.submitted=true;
+    console.log(this.form.value)
   }
 
 }
