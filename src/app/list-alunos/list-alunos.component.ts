@@ -39,3 +39,4 @@ export class ListAlunosComponent implements OnInit {
   }
 
 }
+
