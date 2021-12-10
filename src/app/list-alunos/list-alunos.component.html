@@ -1,32 +1,31 @@
 <div class="card">
-    <div class="card-header">
-      <div class="float-start">
-        <h4> Alunos </h4>
-      </div>
+  <h5 class="card-header">
+    <div class="float-start">
+      <h4>Alunos</h4>
     </div>
-    <div class="card-body">
-        <table class="table table-hover" >
-          <thead>
-            <tr class="text-center">
-              <th scope="col"> Nome </th>
-              <th scope="col"> Email </th>
-              <th scope="col"> CPF </th>
-              <th scope="col"> Endereço </th>
-              <th scope="col"> Período </th>
-            </tr>
-          </thead>
-      
-         <!-- <tbody>
-            <tr class="text-center" *ngFor="">
-              <td> {{aluno.nome}} </td>
-              <td> {{aluno.email}} </td>
-              <td> {{aluno.cpf}} </td>
-              <td> {{aluno.endereco}} </td>
-              <td> {{aluno.periodo}} </td>
-            </tr>
-          </tbody>
-        </table>-->
-      
-     
-    </div>
-  </div>
+  </h5>
+  <div class="card-body">
+    <table class="table table-hover" >
+      <thead>
+        <tr class="text-center">
+          <th scope="col"> Nome </th>
+          <th scope="col"> Email </th>
+          <th scope="col"> CPF </th>
+          <th scope="col"> Endereço </th>
+          <th scope="col"> Período </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="text-center" *ngFor="let aluno of alunos$ | async">
+          <td> {{aluno.nome}} </td>
+          <td> {{aluno.email}} </td>
+          <td> {{aluno.cpf}} </td>
+          <td> {{aluno.endereco}} </td>
+          <td> {{aluno.periodo}} </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div> 
+</div>

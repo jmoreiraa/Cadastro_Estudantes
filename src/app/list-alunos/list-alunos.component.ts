@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { empty, Observable, Subject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Aluno } from '../aluno';
+import { AlunoService } from '../aluno.service';
 
 
 @Component({
@@ -10,10 +12,19 @@ import { catchError } from 'rxjs/operators';
 })
 export class ListAlunosComponent implements OnInit {
 
-  constructor() { }
+  alunos$: Observable<Aluno[]> | undefined;
+
+  constructor(private service: AlunoService) { }
 
   ngOnInit(): void {
-    
+    this.getAluno();
+
+  }
+
+  getAluno(){
+
+    this.alunos$ =this.service.list()
+
   }
 
 }

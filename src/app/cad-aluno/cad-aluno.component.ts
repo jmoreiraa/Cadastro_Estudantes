@@ -16,6 +16,13 @@ export class CadAlunoComponent implements OnInit {
               private service: AlunoService ) { }
 
   ngOnInit(): void {
+    this.form=this.fb.group({
+      nome: [null],
+      email: [null],
+      cpf: [null],
+      endereco: [null],
+      periodo: [null]
+    });
   }
 
   onSubmit(){
