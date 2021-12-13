@@ -25,9 +25,18 @@ export class CadAlunoComponent implements OnInit {
     });
   }
 
-  onSubmit(){
-    this.submitted=true;
-    console.log(this.form.value)
+  onSubmit() {
+    this.submitted = true;
+    console.log(this.form.value);
+    if (this.form.valid){
+      console.log('submit');
+      this.service.creat(this.form.value).subscribe(
+        sucess => {
+          console.log('sucesso')
+         
+      }
+        
+      );
+    }
   }
-
 }

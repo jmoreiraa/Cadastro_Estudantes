@@ -16,7 +16,7 @@ export class AlunoService {
     .pipe(tap(console.log))
 }
 
-  creat(aluno:any){
+  creat(aluno:Aluno){
     return this.http.post(this.API , aluno)
     .pipe(take(1));
   }
