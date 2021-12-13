@@ -9,7 +9,7 @@ import { take, tap } from 'rxjs';
 })
 export class AlunoService {
  
-  private readonly API ='http://localhost:8080/alunos'
+  private readonly API ='http://localhost:8080/estudantes'
 
   list(){
     return this.http.get<Aluno[]>(this.API)
